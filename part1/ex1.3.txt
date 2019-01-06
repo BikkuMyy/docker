@@ -1,0 +1,14 @@
+marit@Mari-ThinkPad-L480:~$ docker run -d --rm -it --name ex1.3 ubuntu sh -c 'read website; sleep 3; curl http://$website;'
+marit@Mari-ThinkPad-L480:~$ docker exec -it ex1.3 bash
+root@136da4a80f09:/# apt update
+root@136da4a80f09:/# apt install curl
+root@136da4a80f09:/# exit
+marit@Mari-ThinkPad-L480:~$ docker attach ex1.3 
+helsinki.fi
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>

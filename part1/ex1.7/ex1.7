@@ -1,0 +1,5 @@
+docker build -t backend .
+docker run -d -it -v $(pwd):/mydir -p 8000:8000 --name backend backend
+
+docker build -t frontend .
+docker run -d -it -v $(pwd):/mydir -p 5000:5000 --name frontend frontend

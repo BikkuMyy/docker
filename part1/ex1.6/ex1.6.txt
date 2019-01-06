@@ -1,0 +1,2 @@
+docker build -t logger .
+docker run -d -it -v $(pwd):/mydir -p 8000:8000 --name ex1.6 logger

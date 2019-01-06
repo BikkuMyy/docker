@@ -1,0 +1,2 @@
+docker build -t exposer .
+docker run -d -it -v $(pwd):/mydir -p 5000:5000 --name ex1.5 exposer

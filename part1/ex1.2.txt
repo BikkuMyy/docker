@@ -1,0 +1,1 @@
+I have been using docker at work so I'm also doing these exercises on my work laptop and therefore can't remove all containers and images as required in the exercise.
