@@ -1,7 +1,5 @@
-FROM ubuntu:16.04 
+FROM java:8
 
-WORKDIR /mydir
-RUN apt-get update && apt-get install -y default-jre curl
-RUN curl -L https://github.com/BikkuMyy/tiralabra/blob/master/tiralabra.jar -o tiralabra.jar
-RUN java -jar tiralabra.jar
-CMD ["/bin/bash"]
+WORKDIR /
+ADD tiralabra.jar tiralabra.jar
+CMD java -jar tiralabra.jar
