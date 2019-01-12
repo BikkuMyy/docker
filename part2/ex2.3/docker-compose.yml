@@ -1,13 +1,13 @@
 version: '3.5'
 
 services:
-  redis:
-    image: redis:alpine
-    volumes:
-      - .:/data
+  db:
+    image: postgres:alpine
     restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=example
     ports:
-      - 6379:6379
+      - 5432:5432
   backend:
     build: ../../backend
     ports:
@@ -15,10 +15,12 @@ services:
     volumes:
       - ../../backend:/mydir
     links:
-      - redis
+      - db
     environment:
       - FRONT_URL=http://localhost:5000 
-      - REDIS=redis
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=example
+      - DB_HOST=db
   frontend:
     build: ../../frontend
     ports:

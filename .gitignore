@@ -1,6 +1,4 @@
 backend/
 frontend/
-dockerfiles/
 whoami/
-*.jar
 *.rdb
